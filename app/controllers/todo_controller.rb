@@ -20,13 +20,13 @@ class TodoController < ApplicationController
             redirect_to "/"
            end
          
-           def update
-              id=params[:id]
-              todo_upt=Todo.find(id)
-              todo_upt.status :True
-              todo_upt.save
-              redirect_to "/"
-           end
+          #  def update
+          #     id=params[:id]
+          #     todo_upt=Todo.find(id)
+          #     todo_upt.status :True
+          #     todo_upt.save
+          #     redirect_to "/"
+          #  end
     private
           def user_params
           params.require(:todo).permit(:todo_text,:due_date,:status)

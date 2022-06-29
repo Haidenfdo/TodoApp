@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'todo#index'
    match 'todo/create',:to => 'todo#create',:via => :post
    match'/delete',:to=>'todo#delete',:via=>:post
-   match'/update',:to=>'todo#update',:via=>:post
+  #  match'/update',:to=>'todo#update',:via=>:post
   #  match'/update',:to=>'todo#update',:via=>:post
    
 end

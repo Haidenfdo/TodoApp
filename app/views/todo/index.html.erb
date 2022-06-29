@@ -15,14 +15,14 @@
     <div class="user_text"><h4>Need To do...</h4></div>
     <div class="user_due"><h4>due date</h4></div>
     <div class="status"><h4>Status</h4></div>
-    <form action="/update" method="post">
-     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    <%# <form action="/update" method="post"> %>
+     <%# <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"> %>
   <% @todos_list.each do|every_record|%>
-   <div id="id"><h6><input type="number" name="id" <%=every_record.id %>></h6></div>
+   <div id="id"><h6><%=every_record.id %></h6></div>
    <div id="create"><h6><%=every_record.created_at.to_date %></h6></div>
   <div id="text"><h6><%=every_record.todo_text %></h6></div>
   <div id="date"><h6><%=every_record.due_date %></h6></div>
-  <div id="comp"><button type="submit">Completed</button></div>
+  <%# <div id="comp"><button type="submit">Completed</button></div> %>
   <%end%>
   </form>
   </div>
