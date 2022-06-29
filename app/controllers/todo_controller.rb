@@ -10,8 +10,7 @@ class TodoController < ApplicationController
             todo=Todo.new(user_params)
             todo.save
             redirect_to "/"
-          end
-        
+          end  
           def delete
             id = params[:del_id]
             del_todo= Todo.find(id)
@@ -19,7 +18,6 @@ class TodoController < ApplicationController
             del_todo.save
             redirect_to "/"
            end
-         
           #  def update
           #     id=params[:id]
           #     todo_upt=Todo.find(id)

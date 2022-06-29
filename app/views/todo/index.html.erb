@@ -16,7 +16,7 @@
     <div class="user_due"><h4>due date</h4></div>
     <div class="status"><h4>Status</h4></div>
     <%# <form action="/update" method="post"> %>
-     <%# <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"> %>
+     <%# <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>
   <% @todos_list.each do|every_record|%>
    <div id="id"><h6><%=every_record.id %></h6></div>
    <div id="create"><h6><%=every_record.created_at.to_date %></h6></div>
