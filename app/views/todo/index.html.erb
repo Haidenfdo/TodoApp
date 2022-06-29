@@ -1,0 +1,35 @@
+<section class="container contain">
+  <div><h1>My Todo-list</h1></div>
+  <div class="user_input_section">
+    <form action="todo/create" method="post">
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    <input type="text" name="todo[todo_text]" placeholder="What's next?" class="user_input_box" required>
+    <input type="date" name="todo[due_date]" required > 
+    <button class="btn btn-primary" type="submit" >Add</button>
+    </form>
+  </div>
+  </section>
+  <div class="todolist_box">   
+    <div class="user_id"><h4>id</h4></div>
+    <div class="user_cre"><h4>Created at...</h4></div>
+    <div class="user_text"><h4>Need To do...</h4></div>
+    <div class="user_due"><h4>due date</h4></div>
+    <div class="status"><h4>Status</h4></div>
+    <form action="/update" method="post">
+     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <% @todos_list.each do|every_record|%>
+   <div id="id"><h6><input type="number" name="id" <%=every_record.id %>></h6></div>
+   <div id="create"><h6><%=every_record.created_at.to_date %></h6></div>
+  <div id="text"><h6><%=every_record.todo_text %></h6></div>
+  <div id="date"><h6><%=every_record.due_date %></h6></div>
+  <div id="comp"><button type="submit">Completed</button></div>
+  <%end%>
+  </form>
+  </div>
+  <div class="delete">
+  <form action="/delete" method="post" >
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+    <input type="number" placeholder="Todo's id" name="del_id">
+    <button class="btn btn-dark del_btn" type="submit" >Delete</button>
+    </div> 
+  </form>
